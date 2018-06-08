@@ -1,35 +1,32 @@
 #include "Dinosaurio.h"
 #include "aereos.h"
-#include <iostream>
-#include <string>
 
-using std::string;
+aereos::aereos(){
 
- aereos::aereos(string a, string s):Dinosaurio(pNombre, pAltura, pPeso,pFecha, pSexo, pLongitud){
-    vuela = a;
-    plumaje = s;
-    this->pNombre = pNombre;
-    this->pAltura = pAltura;
-    this->pPeso = pPeso;
-    this->pFecha = pFecha;
-    this->pSexo = pSexo;
-    this->pLongitud = pLongitud;
+}
+aereos::aereos(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud
+, bool vuela, bool plumas):Dinosaurio(nombre, altura, peso, fechaCreacion, sexo, longitud){
+  this->vuela = vuela;
+  this->plumas = plumas;
 }
 
-
-string aereos::getVuela(){
-    return vuela;
+bool aereos::getVuela(){
+  return vuela;
 }
 
-string aereos::getPlumas(){
-
-    return plumaje;
+bool aereos::getPlumas(){
+  return plumas;
 }
 
-void aereos::setVuela(string a){
-   vuela = a;
+void aereos::getVuela(bool vuela){
+  this->vuela = vuela;
 }
 
-void aereos::setPlumas(string c){
-    plumaje = c;
+void aereos::getPlumas(bool plumas){
+  this->plumas = plumas;
+}
+
+void Aereos::toString(){
+cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
+  "Longitud: "<< longitud << "Vuela?:  " <<vuela << "Tiene plumas?: "<<plumas;
 }
