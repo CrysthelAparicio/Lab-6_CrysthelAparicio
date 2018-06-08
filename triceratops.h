@@ -13,7 +13,7 @@ class triceratops:public herbivoros{
     triceratops(string, int, int, string, string, int, string, int, int ,int);
     int getLongitudCuernos();
     int getLongitudCuernosNasal();
-    virtual void toString();
+  
     void setlongitudCuernos(int);
     void setLongitudCuernosNasales(int);
 
