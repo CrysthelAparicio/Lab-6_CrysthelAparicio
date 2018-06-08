@@ -2,8 +2,20 @@
 #include <string>
 using namespace std;
 #include "Dinosaurio.h"
+#include "aereos.h"
+#include "Carnivoros.h"
+#include "Cuidador.h"
+#include "herbivoros.h"
+#include "Marinos.h"
+#include "omnivoros.h"
+#include "oviraptor.h"
+#include "Spinosauro.h"
+#include "triceratops.h"
+#include "Tyranosaurio.h"
 
-//void eliminarDinosaurio(Dinosuario*);
+Dinosaurio* dino;
+Cuidador* cuida;
+
 
 int main()
 {
@@ -26,7 +38,52 @@ int main()
 		switch (opcion)
 		{
 			case 1:
-				
+	do{
+        int opcionAgregar;
+             cout << "\nAGREGAR\n"
+			<< "1) Agregar Carnivoros\n"
+			<< "2) Agregar Herbivoros\n"
+			<< "3) Agregar Omnivoros\n"
+			<< "4) Agregar Aereos\n"
+			<< "5) Agregar Marinos\n"
+			<< "0) Salir\n"
+			<< "Seleccione una opcion: ";
+		cin >> opcionAgregar;
+
+		switch (opcionAgregar)
+                }
+                case 1:
+
+                break;
+
+                case 2:
+                
+                break;
+
+                case 3:
+                
+                break;
+
+                case 4:
+                
+                break;
+
+                case 5:
+                
+                break;
+
+                case 0:
+
+                break;
+
+                default:
+				cout << "Opcion no valida!" << endl;
+				break;
+		}
+	}
+	while (opcionAgregar != 0);
+	return 0;
+}
 				break;
 
 			case 2:

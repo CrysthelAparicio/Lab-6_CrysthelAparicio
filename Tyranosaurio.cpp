@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include "Dinosaurio.h"
 #include "Carnivoros.h"
 #include "Tyranosaurio.h"
 

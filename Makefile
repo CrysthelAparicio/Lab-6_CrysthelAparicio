@@ -14,9 +14,9 @@ Carnivoros.o: Carnivoros.h Dinosaurio.h Carnivoros.cpp
 Tyranosaurio.o: Tyranosaurio.h Carnivoros.h Tyranosaurio.cpp
 	g++ -c Tyranosaurio.cpp
 
-# Pelaje
-Pelaje.o: Pelaje.h Pelaje.cpp
-	g++ -c Pelaje.cpp
+# Spinosauro
+Spinosauro.o: Spinosauro.h Carnivoros.h Spinosauro.cpp
+	g++ -c Spinosauro.cpp
 
 # Ojos
 Ojos.o: Ojos.h Ojos.cpp
