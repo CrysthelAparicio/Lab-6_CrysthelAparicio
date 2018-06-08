@@ -1,15 +1,20 @@
 #include "omnivoros.h"
+#include "Dinosaurio.h"
 #include <iostream>
 #include <string>
 
-omnivoros::omnivoros(){
+using std::string;
 
-
-}
-
-omnivoros::omnivoros(int m, int c){
-    n_molares = m;
+omnivoros:: omnivoros(int m, int c):Dinosaurio(string pNombre, int pAltura, double pPeso, string pFecha, string pSexo, double pLongitud){
+    n_molares = m;string;
     n_colmillos = c;
+    this->pNombre = pNombre;
+    this->pAltura = pAltura;
+    this->pPeso = pPeso;
+    this->pFecha = pFecha;
+    this->pSexo = pSexo;
+    this->pLongitud = pLongitud;
+
 }
 
 
@@ -27,6 +32,6 @@ void omnivoros::setNumeroMolares(int m){
    n_molares = m;
 }
 
-void omnivoros::setNumeroComillos(int c){
+void omnivoros::setNumeroColmillos(int c){
     n_colmillos = c;
 }

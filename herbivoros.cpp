@@ -1,31 +1,33 @@
-#include "herviboros.h"
+#include "herbivoros.h"
+#include "Dinosaurio.h"
 #include <iostream>
 #include <string>
 
 
-herviboros:: herviboros(){
-
-
-}
-
-herviboros:: herviboros(string t, int d){
+    herbivoros:: herbivoros(string t, int d):Dinosaurio(pNombre, pAltura, pPeso,pFecha, pSexo, pLongitud){
     tipo = t;
     dientes = d;
+    this->pNombre = pNombre;
+    this->pAltura = pAltura;
+    this->pPeso = pPeso;
+    this->pFecha = pFecha;
+    this->pSexo = pSexo;
+    this->pLongitud = pLongitud;
 }
 
 
-int herviboros::getDientes(){
+int herbivoros::getDientes(){
     return dientes;
 }
 
-string herviboros::getTipo(){
+string herbivoros::getTipo(){
     return tipo;
 }
 
-void herviboros::setDientes(int d){
+void herbivoros::setDientes(int d){
     dientes = d;
 }
 
-void herviboros::setTipo(string t){
+void herbivoros::setTipo(string t){
     tipo = t;
 }

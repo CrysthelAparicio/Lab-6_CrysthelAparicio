@@ -1,21 +1,21 @@
 #include "oviraptor.h"
 #include <iostream>
 #include <string>
+#include "omnivoros.h"
 
-oviraptor::oviraptor(){
+using std::string;
 
-
-}
-
-oviraptor::oviraptor(int a, string s){
+oviraptor::oviraptor(int a, string s):omnivoros(pmolares,ccolmillos) {
     altura = a;
     plumaje = s;
+    this->pmolares = molares;
+    this->ccolmillos = colmillos;
 }
 
 
 int oviraptor::getAltura(){
 
-    return n_molares;
+    return altura;
 }
 
 string oviraptor::getPlumaje(){
@@ -27,6 +27,6 @@ void oviraptor::setAltura(int a){
    altura = a;
 }
 
-void oviraptor::setPlumaje(int c){
+void oviraptor::setPlumaje(string c){
     plumaje = c;
 }

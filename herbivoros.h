@@ -2,15 +2,15 @@
 #define HERVIBOROS_H
 #include "Dinosaurio.h"
 
-class herviboros:public Dinosaurio(){
+class herbivoros:public Dinosaurio{
     
     private:
         string tipo;
         int dientes;
     
     public:
-        herviboros();
-        herviboros(string,int);
+        herbivoros();
+        herbivoros(string,int);
         //get
         string getTipo();
         int getDientes();
@@ -20,4 +20,6 @@ class herviboros:public Dinosaurio(){
         
 
 
-}
+};
+
+#endif

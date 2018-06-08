@@ -5,8 +5,8 @@
 
 using namespace std;
 
-Carnivoros::Carnivoros(string pOrgano, 
-string pCoc):Dinosaurio(string pNombre, int pAltura, double pPeso, string pFecha, 
+Carnivoros::Carnivoros(string pOrgano,string pCoc):
+Dinosaurio(string pNombre, int pAltura, double pPeso, string pFecha, 
 string pSexo, double pLongitud){
     organo = pOrgano;
     coc = pCoc;

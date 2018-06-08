@@ -3,7 +3,9 @@
 #include "omnivoros.h"
 #include<string> 
 
-class oviraptor:public omnivoros(){
+using std::string;
+class oviraptor:public omnivoros{
+    
     private:
         int altura;
         string plumaje;
@@ -13,9 +15,11 @@ class oviraptor:public omnivoros(){
         oviraptor(int,string);
         //get
         int getAltura();
-        int getPlumaje();
+        string getPlumaje();
         //set
         void setAltura(int);
         void setPlumaje(string);
         
-}
+};
+
+#endif

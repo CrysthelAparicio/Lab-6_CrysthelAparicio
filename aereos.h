@@ -1,9 +1,9 @@
 #ifndef AEREOS_H
 #define AEREOS_H
-#include "Dinosario.h"
+#include "Dinosaurio.h"
 #include<string> 
 
-class aereos:public Dinosario(){
+class aereos:public Dinosaurio{
     private:
         string vuela;
         string plumaje;
@@ -12,10 +12,12 @@ class aereos:public Dinosario(){
         aereos();
         aereos(string,string);
         //get
-        int getVuela();
-        int getPlumaje();
+        string getVuela();
+        string getPlumas();
         //set
         void setVuela(string);
-        void setPlumaje(string);
+        void setPlumas(string);
         
-}
+};
+
+#endif

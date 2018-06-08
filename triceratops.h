@@ -1,15 +1,15 @@
-#ifndef HERVIBOROS_H
+#ifndef TRICERATOPS_H
 #define TRICERATOPS_H
-#include "herviboros.h"
+#include "herbivoros.h"
 
-class triceratops:public herbivoros(){
+class triceratops:public herbivoros{
     
     private:
         int longitud_cuernos;
         int longitud_cuerno_nasal;
     
     public:
-        triceratops();
+       
         triceratops(int,int);
         //get
         int getLongitudCuernos();
@@ -18,4 +18,6 @@ class triceratops:public herbivoros(){
         void setLongitudCuernos(int);
         void setLongitud_Cuerno_Nasal(int);
         
-}
+};
+
+#endif

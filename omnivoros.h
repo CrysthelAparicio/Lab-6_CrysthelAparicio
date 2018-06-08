@@ -2,7 +2,7 @@
 #define OMNIVOROS_H
 #include "Dinosaurio.h"
 
-class omnivoros:public Dinosaurio(){
+class omnivoros:public Dinosaurio{
     private:
         int n_molares;
         int n_colmillos;
@@ -17,4 +17,6 @@ class omnivoros:public Dinosaurio(){
         void setNumeroMolares(int);
         void setNumeroColmillos(int);
         
-}
+};
+
+#endif
