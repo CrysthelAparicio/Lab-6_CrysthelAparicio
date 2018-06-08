@@ -67,3 +67,4 @@ double Dinosaurio::getLongitud(){
 void Dinosaurio::setLongitud(double pLongitud){
     longitud = pLongitud;
 }
+
