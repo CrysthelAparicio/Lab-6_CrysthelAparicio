@@ -12,15 +12,24 @@ using namespace std;
 #include "Spinosauro.h"
 #include "triceratops.h"
 #include "Tyranosaurio.h"
+#include <vector>
 
-Dinosaurio* dino;
+
+
+
+using std::cout;
+using std::cin;
+using std::vector;
+
+//Dinosaurio* dino;
 Cuidador* cuida;
 
+vector<Dinosaurio> vr;
 
 int main()
 {
 	int opcion;
-	Dinosaurio* dino = NULL;
+	//Dinosaurio* dino = NULL;
 	do
 	{
 		cout << "\nMENU\n"
@@ -38,60 +47,74 @@ int main()
 		switch (opcion)
 		{
 			case 1:
-	do{
-        int opcionAgregar;
-             cout << "\nAGREGAR\n"
-			<< "1) Agregar Carnivoros\n"
-			<< "2) Agregar Herbivoros\n"
-			<< "3) Agregar Omnivoros\n"
-			<< "4) Agregar Aereos\n"
-			<< "5) Agregar Marinos\n"
-			<< "0) Salir\n"
-			<< "Seleccione una opcion: ";
-		cin >> opcionAgregar;
+				int opcionAgregar;
+						do{
+							//nt opcionAgregar;
+								cout << "\nAGREGAR\n"
+								<< "1) Agregar Carnivoros\n"
+								<< "2) Agregar Herbivoros\n"
+								<< "3) Agregar Omnivoros\n"
+								<< "4) Agregar Aereos\n"
+								<< "5) Agregar Marinos\n"
+								<< "0) Salir\n"
+								<< "Seleccione una opcion: ";
+							cin >> opcionAgregar;
 
-		switch (opcionAgregar)
-                }
-                case 1:
+							switch (opcionAgregar)
+									{
+									case 1:
 
-                break;
+									break;
 
-                case 2:
-                
-                break;
+									case 2:
+									
+									break;
 
-                case 3:
-                
-                break;
+									case 3:
+									
+									break;
 
-                case 4:
-                
-                break;
+									case 4:
+									
+									break;
 
-                case 5:
-                
-                break;
+									case 5:
+									
+									break;
 
-                case 0:
+									case 0:
 
-                break;
+									break;
 
-                default:
-				cout << "Opcion no valida!" << endl;
+									default:
+									cout << "Opcion no valida!" << endl;
+									break;
+							}
+						}
+						while (opcionAgregar != 0);
+						return 0;
+					
 				break;
-		}
-	}
-	while (opcionAgregar != 0);
-	return 0;
-}
-				break;
 
-			case 2:
+
+			case 2: //modificar
+				
 				
 				break;
 
-			case 3:
-				
+			case 3://eliminar especies
+				int pos = 0;
+				for(int i = 0; i<vr.size();i++){
+					cout<<"[ "<<i<<" ]"<< vr.cbegin()[i] <<endl;
+				}
+				cout<<endl;
+				cout<<"Ingrese la posicion del dinosaurio a eliminar"<<endl;
+				cin>>pos;
+
+				delete vr[pos];
+
+				dino.erase(dino.begin()+pos);
+
 				break;
 
 			case 4:
