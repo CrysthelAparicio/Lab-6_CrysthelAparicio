@@ -14,19 +14,8 @@ using namespace std;
 #include "Tyranosaurio.h"
 #include <vector>
 
-<<<<<<< HEAD
-
-
-
-using std::cout;
-using std::cin;
-using std::vector;
-
-//Dinosaurio* dino;
-=======
 vector <Dinosaurio*> Vdino;
 Dinosaurio* dino = new Dinosaurio;
->>>>>>> 525167535c2f3364d04cab590c31f8cbff22a7d9
 Cuidador* cuida;
 
 vector<Dinosaurio> vr;
@@ -52,76 +41,8 @@ int main()
 		switch (opcion)
 		{
 			case 1:
-<<<<<<< HEAD
-				int opcionAgregar;
-						do{
-							//nt opcionAgregar;
-								cout << "\nAGREGAR\n"
-								<< "1) Agregar Carnivoros\n"
-								<< "2) Agregar Herbivoros\n"
-								<< "3) Agregar Omnivoros\n"
-								<< "4) Agregar Aereos\n"
-								<< "5) Agregar Marinos\n"
-								<< "0) Salir\n"
-								<< "Seleccione una opcion: ";
-							cin >> opcionAgregar;
-
-							switch (opcionAgregar)
-									{
-									case 1:
-
-									break;
-
-									case 2:
-									
-									break;
-
-									case 3:
-									
-									break;
-
-									case 4:
-									
-									break;
-
-									case 5:
-									
-									break;
-
-									case 0:
-
-									break;
-
-									default:
-									cout << "Opcion no valida!" << endl;
-									break;
-							}
-						}
-						while (opcionAgregar != 0);
-						return 0;
-					
-				break;
-
-
-			case 2: //modificar
-				
-				
-				break;
-
-			case 3://eliminar especies
-				int pos = 0;
-				for(int i = 0; i<vr.size();i++){
-					cout<<"[ "<<i<<" ]"<< vr.cbegin()[i] <<endl;
-				}
-				cout<<endl;
-				cout<<"Ingrese la posicion del dinosaurio a eliminar"<<endl;
-				cin>>pos;
-
-				delete vr[pos];
-=======
 
 				break;
->>>>>>> 525167535c2f3364d04cab590c31f8cbff22a7d9
 
 				dino.erase(dino.begin()+pos);
 
