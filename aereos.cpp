@@ -1,9 +1,8 @@
 #include "Dinosaurio.h"
 #include "aereos.h"
 
-aereos::aereos(){
 
-}
+
 aereos::aereos(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud
 , bool vuela, bool plumas):Dinosaurio(nombre, altura, peso, fechaCreacion, sexo, longitud){
   this->vuela = vuela;
@@ -25,8 +24,9 @@ void aereos::getVuela(bool vuela){
 void aereos::getPlumas(bool plumas){
   this->plumas = plumas;
 }
-
-void Aereos::toString(){
+/*
+void aereos::toString(){
 cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
   "Longitud: "<< longitud << "Vuela?:  " <<vuela << "Tiene plumas?: "<<plumas;
 }
+*/

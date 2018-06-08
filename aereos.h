@@ -13,12 +13,12 @@ class aereos:public Dinosaurio {
 
   public:
 
-    aereos();
+
     aereos(string, int, int , string, string, int, bool, bool);
     bool getVuela();
     bool getPlumas();
     void getVuela(bool);
     void getPlumas(bool);
-    virtual void toString();
+   
 };
 #endif

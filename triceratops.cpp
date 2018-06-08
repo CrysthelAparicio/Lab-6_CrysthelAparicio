@@ -6,26 +6,26 @@
 
 
 
-triceratops::triceratops(string tipo,int dientes,int l, int ll):herbivoros(pTipo,pDientes){
-    longitud_cuernos = l;
-    longitud_cuerno_nasal = ll;
+triceratops::triceratops(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud, string tipo, int incisivos, int longitudCuernos, int longitudCuernoNasal)
+:herbivoros(nombre, altura, peso, fechaCreacion, sexo, longitud, tipo, incisivos){
+  this->longitudCuernos = longitudCuernos;
+  this->longitudCuernoNasal = longitudCuernoNasal;
 }
 
 
 int triceratops::getLongitudCuernos(){
 
-    return longitud_cuernos;
+    return longitudCuernos;
 }
 
-int triceratops::getLongitud_Cuerno_Nasal(){
-
-    return longitud_cuerno_nasal;
+int triceratops::getLongitudCuernosNasal(){
+  return longitudCuernoNasal;
 }
 
-void triceratops::setLongitudCuernos(int l){
-    longitud_cuernos = l;
+void triceratops::setLongitudCuernosNasales(int longitudCuernoNasal){
+    this->longitudCuernoNasal = longitudCuernoNasal;
 }
- 
-void triceratops::setLongitud_Cuerno_Nasal(int ll){
-    longitud_cuerno_nasal = ll;
+
+void triceratops::setlongitudCuernos(int longitudCuernos){
+    this->longitudCuernos = longitudCuernos;
 }

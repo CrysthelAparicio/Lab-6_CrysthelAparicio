@@ -11,13 +11,13 @@ class herbivoros:public Dinosaurio{
     int incisivos;
 
   public:
-    herbivoros();
+  
     herbivoros(string, int, int, string, string, int,string,int);
     string getTipo();
     int getIncisivos();
     void setTipo(string);
     void setIncisivos(int);
-    virtual void toString() = 0;
+  
 
 };
 #endif

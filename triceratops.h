@@ -4,19 +4,19 @@
 
 class triceratops:public herbivoros{
     
-    private:
-        int longitud_cuernos;
-        int longitud_cuerno_nasal;
-    
-    public:
-       
-        triceratops(int,int);
-        //get
-        int getLongitudCuernos();
-        int getLongitud_Cuerno_Nasal();
-        //set
-        void setLongitudCuernos(int);
-        void setLongitud_Cuerno_Nasal(int);
+  public:
+    int longitudCuernos;
+    int longitudCuernoNasal;
+
+  public:
+    triceratops();
+    triceratops(string, int, int, string, string, int, string, int, int ,int);
+    int getLongitudCuernos();
+    int getLongitudCuernosNasal();
+    virtual void toString();
+    void setlongitudCuernos(int);
+    void setLongitudCuernosNasales(int);
+
         
 };
 

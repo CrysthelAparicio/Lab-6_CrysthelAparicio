@@ -4,10 +4,6 @@
 
 using namespace std;
 
-Marinos::Marinos(){
-
-}
-
 Marinos::Marinos(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud,int numAletas,string tipo):
 Dinosaurio(nombre,altura,peso,fechaCreacion,sexo,longitud){
   this-> numAletas = numAletas;
@@ -29,4 +25,9 @@ void Marinos::setnumAletas(int o){
 void Marinos::setTipo(string t){
     Tipo = t;
 }
-
+/*
+void Marinos::toString(){
+  cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
+  "Longitud: "<< longitud <<"Num. de Aletas: "<<numAletas<<"Tipo: "<<Tipo << endl;
+}
+*/

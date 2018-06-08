@@ -11,11 +11,13 @@ class omnivoros:public Dinosaurio{
       int numeroColmillos;
 
   public:
-    omnivoros();
+
     omnivoros(string, int, int, string, string, int, int, int);
     int getnumeroMolares();
     int getnumeroColmillos();
-    virtual void toString() = 0;
+    void setNumeroMolares(int);
+    void setNumeroColmillos(int);
+  
 
 };
 #endif

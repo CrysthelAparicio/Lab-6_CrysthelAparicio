@@ -3,9 +3,7 @@
 #include <iostream>
 using namespace std;
 
-herbivoros::herbivoros(){
 
-}
 herbivoros::herbivoros(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud, string tipo, int incisivos)
 :Dinosaurio(nombre, altura, peso, fechaCreacion, sexo, longitud){
   this->tipo = tipo;
@@ -28,6 +26,3 @@ void herbivoros::setTipo(string tipo){
     this->tipo = tipo;
 }
 
-void Herbivoros::toString(){
-
-}

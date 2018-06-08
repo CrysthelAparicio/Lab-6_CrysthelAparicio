@@ -11,7 +11,7 @@ class oviraptor: public omnivoros{
     bool plumaje;
 
   public:
-    oviraptor();
+  
     oviraptor(string, int, int, string, string, int, int, int, int, bool);
     int getalturaCresta();
     bool getPlumaje();

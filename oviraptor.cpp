@@ -4,9 +4,7 @@
 #include <iostream>
 using namespace std;
 
-oviraptor::oviraptor(){
 
-}
 
 oviraptor::oviraptor(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud
 ,int numeroMolares, int numeroColmillos, int alturaCresta, bool plumaje): omnivoros(nombre, altura, peso, fechaCreacion, sexo, longitud, numeroMolares, numeroColmillos){
@@ -21,11 +19,12 @@ int oviraptor::getalturaCresta(){
 bool oviraptor::getPlumaje(){
   return plumaje;
 }
-
+/*
 void oviraptor::toString(){
   cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
   "Longitud: "<< longitud<< "Altura de la cresta: "<<alturaCresta << "Tiene plumaje?: "<< plumaje;
 }
+*/
 
 void oviraptor::setAlturaCresta(int alturaCresta){
   this->alturaCresta = alturaCresta;
