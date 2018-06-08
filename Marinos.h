@@ -11,5 +11,12 @@ class Marinos{
 
     public:
     Marinos(int,string);
+
+    int getNumAletas();
+    string getTipo();
+    
+    void setNumAletas(int);
+    void setTipo(string);
+    
 };
 #endif

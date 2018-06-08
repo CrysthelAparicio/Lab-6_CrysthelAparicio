@@ -6,27 +6,28 @@
 
 using namespace std;
 
-Tyranosaurio::Tyranosaurio(int pColmillos, 
-int pConsumo):Carnivoros(string pOrgano, 
-string pCoc){
-    colmillos = pColmillos;
-    consumo = pConsumo;
+Spinosauro::Spinosauro(double pAlturaEspina, 
+double pLongitudBrazo):Carnivoros(pOrgano, pCoc){
+    alturaEspina = pAlturaEspina;
+    longitudBrazo = pLongitudBrazo;
+    this->pOrgano=pOrgano;
+    this->pCoc=pCos;
 }
 
-int Tyranosaurio::getColmillos(){
-    return colmillos;
+double Spinosauro::getAlturaEspina(){
+    return alturaEspina;
 }
 
-void Tyranosaurio::setColmillos(int pColmillos){
-    colmillos = pColmillos;
+void Spinosauro::setAlturaEspina(double pAlturaEspina){
+    alturaEspina = pAlturaEspina;
 }
 
 //////////////////7
 
-int Tyranosaurio::getConsumo(){
-    return consumo;
+double Spinosauro::getLongitudBrazo(){
+    return longitudBrazo;
 }
 
-void Tyranosaurio::setConsumo(int pConsumo){
-    consumo = pConsumo;
+void Spinosauro::setLongitudBrazo(double pLongitudBrazo){
+    longitudBrazo = pLongitudBrazo;
 }

@@ -7,10 +7,11 @@
 using namespace std;
 
 Tyranosaurio::Tyranosaurio(int pColmillos, 
-int pConsumo):Carnivoros(string pOrgano, 
-string pCoc){
+int pConsumo):Carnivoros(pOrgano,pCoc){
     colmillos = pColmillos;
     consumo = pConsumo;
+    this->pOrgano=pOrgano;
+    this->pCoc=pCoc;
 }
 
 int Tyranosaurio::getColmillos(){

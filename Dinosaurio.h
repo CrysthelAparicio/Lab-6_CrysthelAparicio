@@ -15,6 +15,7 @@ class Dinosaurio{
 
     public:
     Dinosaurio(string,int,double,string,string,double);
+    ~Dinosaurio();
     
     string getNombre();
     int getAltura();
