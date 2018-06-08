@@ -15,7 +15,7 @@ using namespace std;
 #include <vector>
 
 vector <Dinosaurio*> Vdino;
-Dinosaurio* dino = new Dinosaurio;
+Dinosaurio* dino;
 Cuidador* cuida;
 
 vector<Dinosaurio> vr;
@@ -44,8 +44,10 @@ int main()
 
 				break;
 
-				dino.erase(dino.begin()+pos);
+			case 2:
+				break;
 
+			case 3:
 				break;
 
 			case 4:
@@ -113,6 +115,21 @@ void agregarEspecies()
         char carni;
         string organo; 
         string coc; 
+		string nombre;
+		double altura,peso,longitud;
+		string fecha,sexo;
+		cout<<"Ingrese el nombre del Dinosaurio"<<endl;
+		cin>>nombre;
+		cout<<"Ingrese la Altura"<<endl;
+		cin>>altura;
+		cout<<"Ingrese el peso"<<endl;
+		cin>>peso;
+		cout<<"Ingrese la fecha de Creacion"<<endl;
+		cin>>fecha;
+		cout<<"Ingrese el Sexo"<<endl;
+		cin>>sexo;
+		cout<<"Ingrese la longitud"<<endl;
+		cin>>longitud;
         cout<<"Ingrese tipo de organo(dientes-garras): "<<endl;
         cin>>organo;
         cout<<"Ingrese si es cazador o carroñero: "<<endl;
@@ -140,6 +157,7 @@ void agregarEspecies()
                         }else{
                         cin>>consumo;
                         }
+						//Vdino.push_back(new Tyranosaurio(colmillos,consumo));
                         break;
 
                         case '2':
@@ -155,6 +173,8 @@ void agregarEspecies()
                         }else{
                         cin>>longitudBrazo;
                         }
+						//nombre,altura,peso,fecha,sexo,longitud,organo,coc,alturaEspina,longitudBrazo);
+						Vdino.push_back(dino);
                         break;
                     }
         case '2':
@@ -183,8 +203,23 @@ void agregarEspecies()
                         }else{
                         cin>>consumo;
                         }
+						Vdino.push_back(new Tyranosaurio(colmillos,consumo));
                         break;
         }
+
+		case '3':
+			char omni;
+			string organo; 
+			string coc; 
+			cout<<"Ingrese tipo de organo(dientes-garras): "<<endl;
+			cin>>organo;
+			cout<<"Ingrese si es cazador o carroñero: "<<endl;
+			cin>>coc;
+			cout<<"Tipo de Dinosaurio Carnivoro->\n1.Tyranosaurio\n2.Spinosaurio";
+			cin>>carni;
+			break;
+
+
 
         
     }

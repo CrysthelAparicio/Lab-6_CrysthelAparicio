@@ -11,7 +11,7 @@ class Tyranosaurio:public Carnivoros{
     int consumo;
 
     public:
-    Tyranosaurio(int,int);
+    Tyranosaurio(string,int,int,string,string,int,string,string,int,int);
 
     int getColmillos();
     int getConsumo();

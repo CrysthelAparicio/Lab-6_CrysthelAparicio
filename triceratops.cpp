@@ -6,11 +6,9 @@
 
 
 
-triceratops:: triceratops(int l, int ll):herbivoros(pTipo,pDientes){
+triceratops::triceratops(string tipo,int dientes,int l, int ll):herbivoros(pTipo,pDientes){
     longitud_cuernos = l;
     longitud_cuerno_nasal = ll;
-    this->pTipo = pTipo;
-    this->pDientes = pDientes;
 }
 
 
@@ -27,7 +25,7 @@ int triceratops::getLongitud_Cuerno_Nasal(){
 void triceratops::setLongitudCuernos(int l){
     longitud_cuernos = l;
 }
-
+ 
 void triceratops::setLongitud_Cuerno_Nasal(int ll){
     longitud_cuerno_nasal = ll;
 }

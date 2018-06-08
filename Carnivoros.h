@@ -11,7 +11,7 @@ class Carnivoros:public Dinosaurio{
     string coc; //cazador o carroñero
 
     public:
-    Carnivoros(string,string);
+    Carnivoros(string,int,int,string,string,int,string,string);
     string getOrgano();
     string getCoc();
 

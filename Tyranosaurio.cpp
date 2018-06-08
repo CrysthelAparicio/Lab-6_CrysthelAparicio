@@ -2,15 +2,13 @@
 #include <string>
 #include "Carnivoros.h"
 #include "Tyranosaurio.h"
+#include "Dinosaurio.h"
 
 using namespace std;
 
-Tyranosaurio::Tyranosaurio(int pColmillos, 
-int pConsumo):Carnivoros(pOrgano,pCoc){
-    colmillos = pColmillos;
-    consumo = pConsumo;
-    this->pOrgano=pOrgano;
-    this->pCoc=pCoc;
+Tyranosaurio::Tyranosaurio(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud,string organo,string tipo,int consumoDiario,int numColmillos):Carnivoros(nombre,altura,peso,fechaCreacion,sexo,longitud,organo,tipo){
+    this-> consumo = consumoDiario;
+    this-> colmillos = numColmillos;
 }
 
 int Tyranosaurio::getColmillos(){

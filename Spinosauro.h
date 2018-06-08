@@ -11,7 +11,7 @@ class Spinosauro:public Carnivoros{
     double longitudBrazo;
 
     public:
-    Spinosauro(double,double);
+    Spinosauro(string,int,int,string,string,int,string,string,int,int);
 
     double getAlturaEspina();
     double getLongitudBrazo();
