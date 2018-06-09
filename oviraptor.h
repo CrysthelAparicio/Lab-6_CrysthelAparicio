@@ -1,25 +1,21 @@
 #ifndef OVIRAPTOR_H
 #define OVIRAPTOR_H
 #include "omnivoros.h"
-#include<string> 
+#include <iostream>
+#include "Dinosaurio.h"
+using namespace std;
 
-using std::string;
-class oviraptor:public omnivoros{
-    
-    private:
-        int altura;
-        string plumaje;
-    
-    public:
-        oviraptor();
-        oviraptor(int,string);
-        //get
-        int getAltura();
-        string getPlumaje();
-        //set
-        void setAltura(int);
-        void setPlumaje(string);
-        
+class oviraptor: public omnivoros{
+  public:
+    int alturaCresta;
+    bool plumaje;
+
+  public:
+    oviraptor();
+    oviraptor(string, int, int, string, string, int, int, int, int, bool);
+    int getalturaCresta();
+    bool getPlumaje();
+    void setAlturaCresta(int);
+    void setPlumaje(bool);
 };
-
 #endif

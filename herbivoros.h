@@ -1,25 +1,23 @@
-#ifndef HERVIBOROS_H
-#define HERVIBOROS_H
+#ifndef HERBIVOROS_H
+#define HERBIVOROS_H
+#include <iostream>
+using namespace std;
 #include "Dinosaurio.h"
 
 class herbivoros:public Dinosaurio{
-    
-    private:
-        string tipo;
-        int dientes;
-    
-    public:
-        herbivoros();
-        herbivoros(string,int);
-        //get
-        string getTipo();
-        int getDientes();
-        //set
-        void setTipo(string);
-        void setDientes(int);
-        
 
+  public:
+    string tipo;
+    int incisivos;
+
+  public:
+    herbivoros();
+    herbivoros(string, int, int, string, string, int,string,int);
+    string getTipo();
+    int getIncisivos();
+    void setTipo(string);
+    void setIncisivos(int);
+    virtual void toString() = 0;
 
 };
-
 #endif

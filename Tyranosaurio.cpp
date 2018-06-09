@@ -5,12 +5,13 @@
 
 using namespace std;
 
-Tyranosaurio::Tyranosaurio(int pColmillos, 
-int pConsumo):Carnivoros(pOrgano,pCoc){
+Tyranosaurio::Tyranosaurio(string pNombre, int pAltura, double pPeso, string pFecha, string pSexo, double pLongitud, string pOrgano, 
+string pCoc, int pColmillos, 
+int pConsumo):Carnivoros(pNombre,pAltura, pPeso, pFecha, pSexo,pLongitud, pOrgano, 
+ pCoc, pColmillos, 
+pConsumo){
     colmillos = pColmillos;
     consumo = pConsumo;
-    this->pOrgano=pOrgano;
-    this->pCoc=pCoc;
 }
 
 int Tyranosaurio::getColmillos(){

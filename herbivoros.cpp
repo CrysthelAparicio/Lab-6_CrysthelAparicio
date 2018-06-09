@@ -1,33 +1,33 @@
 #include "herbivoros.h"
 #include "Dinosaurio.h"
 #include <iostream>
-#include <string>
+using namespace std;
 
+herbivoros::herbivoros(){
 
-    herbivoros:: herbivoros(string t, int d):Dinosaurio(pNombre, pAltura, pPeso,pFecha, pSexo, pLongitud){
-    tipo = t;
-    dientes = d;
-    this->pNombre = pNombre;
-    this->pAltura = pAltura;
-    this->pPeso = pPeso;
-    this->pFecha = pFecha;
-    this->pSexo = pSexo;
-    this->pLongitud = pLongitud;
 }
-
-
-int herbivoros::getDientes(){
-    return dientes;
+herbivoros::herbivoros(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud, string tipo, int incisivos)
+:Dinosaurio(nombre, altura, peso, fechaCreacion, sexo, longitud){
+  this->tipo = tipo;
+  this->incisivos = incisivos;
 }
 
 string herbivoros::getTipo(){
-    return tipo;
+  return tipo;
 }
 
-void herbivoros::setDientes(int d){
-    dientes = d;
+int herbivoros::getIncisivos(){
+  return incisivos;
 }
 
-void herbivoros::setTipo(string t){
-    tipo = t;
+void herbivoros::setIncisivos(int incisivos){
+    this->incisivos = incisivos;
+}
+
+void herbivoros::setTipo(string tipo){
+    this->tipo = tipo;
+}
+
+void Herbivoros::toString(){
+
 }

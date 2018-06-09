@@ -1,37 +1,34 @@
 #include "omnivoros.h"
-#include "Dinosaurio.h"
 #include <iostream>
-#include <string>
+#include "Dinosaurio.h"
+using namespace std;
 
-using std::string;
-
-omnivoros:: omnivoros(int m, int c):Dinosaurio(string pNombre, int pAltura, double pPeso, string pFecha, string pSexo, double pLongitud){
-    n_molares = m;string;
-    n_colmillos = c;
-    this->pNombre = pNombre;
-    this->pAltura = pAltura;
-    this->pPeso = pPeso;
-    this->pFecha = pFecha;
-    this->pSexo = pSexo;
-    this->pLongitud = pLongitud;
+omnivoros::omnivoros(){
 
 }
 
-
-int omnivoros::getNumeroMolares(){
-
-    return n_molares;
+omnivoros::omnivoros(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud, int numeroColmillos, int numeroMolares)
+:Dinosaurio(nombre, altura, peso, fechaCreacion, sexo, longitud){
+  this->numeroColmillos = numeroColmillos;
+  this->numeroMolares = numeroMolares;
 }
 
-int omnivoros::getNumeroComillos(){
-
-    return n_colmillos;
+int omnivoros::getnumeroMolares(){
+  return numeroMolares;
 }
 
-void omnivoros::setNumeroMolares(int m){
-   n_molares = m;
+int omnivoros::getnumeroColmillos(){
+  return numeroColmillos;
 }
 
-void omnivoros::setNumeroColmillos(int c){
-    n_colmillos = c;
+void omnivoros::toString(){
+
+}
+
+void omnivoros::setNumeroMolares(int numeroMolares){
+  this->numeroMolares = numeroMolares;
+}
+
+void omnivoros::setNumeroColmillos(int numeroColmillos){
+  this->numeroColmillos = numeroColmillos;
 }

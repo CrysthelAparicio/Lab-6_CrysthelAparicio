@@ -1,32 +1,36 @@
 #include "oviraptor.h"
-#include <iostream>
-#include <string>
 #include "omnivoros.h"
+#include "Dinosaurio.h"
+#include <iostream>
+using namespace std;
 
-using std::string;
+oviraptor::oviraptor(){
 
-oviraptor::oviraptor(int a, string s):omnivoros(pmolares,ccolmillos) {
-    altura = a;
-    plumaje = s;
-    this->pmolares = molares;
-    this->ccolmillos = colmillos;
 }
 
-
-int oviraptor::getAltura(){
-
-    return altura;
+oviraptor::oviraptor(string nombre, int altura, int peso, string fechaCreacion, string sexo, int longitud
+,int numeroMolares, int numeroColmillos, int alturaCresta, bool plumaje): omnivoros(nombre, altura, peso, fechaCreacion, sexo, longitud, numeroMolares, numeroColmillos){
+  this->alturaCresta = alturaCresta;
+  this->plumaje = plumaje;
 }
 
-string oviraptor::getPlumaje(){
-
-    return plumaje;
+int oviraptor::getalturaCresta(){
+  return alturaCresta;
 }
 
-void oviraptor::setAltura(int a){
-   altura = a;
+bool oviraptor::getPlumaje(){
+  return plumaje;
 }
 
-void oviraptor::setPlumaje(string c){
-    plumaje = c;
+void oviraptor::toString(){
+  cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
+  "Longitud: "<< longitud<< "Altura de la cresta: "<<alturaCresta << "Tiene plumaje?: "<< plumaje;
+}
+
+void oviraptor::setAlturaCresta(int alturaCresta){
+  this->alturaCresta = alturaCresta;
+}
+
+void oviraptor::setPlumaje(bool plumaje){
+  this->plumaje = plumaje;
 }

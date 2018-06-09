@@ -1,22 +1,21 @@
 #ifndef OMNIVOROS_H
 #define OMNIVOROS_H
+#include <iostream>
 #include "Dinosaurio.h"
+using namespace std;
 
 class omnivoros:public Dinosaurio{
-    private:
-        int n_molares;
-        int n_colmillos;
-    
-    public:
-        omnivoros();
-        omnivoros(int,int);
-        //get
-        int getNumeroMolares();
-        int getNumeroComillos();
-        //set
-        void setNumeroMolares(int);
-        void setNumeroColmillos(int);
-        
-};
 
+  public:
+      int numeroMolares;
+      int numeroColmillos;
+
+  public:
+    omnivoros();
+    omnivoros(string, int, int, string, string, int, int, int);
+    int getnumeroMolares();
+    int getnumeroColmillos();
+    virtual void toString() = 0;
+
+};
 #endif

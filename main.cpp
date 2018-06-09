@@ -163,8 +163,8 @@ void agregarEspecies()
         cin>>organo;
         cout<<"Ingrese si es cazador o carroñero: "<<endl;
         cin>>coc;
-        cout<<"Ingrese tipo de dinosaurio herbivoro->\n1.Triceratops";
-        cin>>herbi;
+        cout<<
+        erbi;
         break;
 
         switch(herbi){
@@ -188,4 +188,626 @@ void agregarEspecies()
 
         
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void eliminarDinosaurio(){
+    int opcion;
+    int cont=0;
+    cout<<"¿Que dinosaurio desea eliminar?, porfavor ingreselo...."<<endl;
+    for(int i = 0; i < Vdino.size(); i++)
+    {
+        cout<<cont<<", "<<Vdino[i]->getNombre()<<endl;
+        cont++;
+    }
+    cin>>opcion;
+    if(opcion<0||opcion>Vdino.size()){
+        cout<<"Incorrecto, opcion fuera de rango"<<endl;
+        cin>>opcion;
+    }else{
+        Vdino.erase(begin(Vdino)+opcion);
+    }
+}
+
+void cargarArchivos(){
+    ifstream infile("texto.txt");
+         char temporalChar;
+         string strTemporal="";
+         int cont=0;
+         Dinosaurio* temPtrDinosaurio;
+         
+        void setNombre(string);
+    void setAltura(int);
+    void setPeso(double);
+    void setFecha(string);
+    void setSexo(string);
+    void setLongitud(double);
+
+         do {
+            do {
+                infile>>temporalChar;
+                if (temporalChar!=',' && temporalChar!='/') {
+                    strTemporal+=temporalChar;
+                }
+            } while(temporalChar!=',' && temporalChar!='/');
+            //cout<<strTemporal<<endl;
+        
+            switch(cont){
+             case 0:
+                temPtrDinosaurio=new Dinosaurio;
+                temPtrDinosaurio->setNombre(strTemporal);
+                cont++;
+             break;
+             case 1:
+                temPtrDinosaurio->setAltura(atoi(strTemporal.c_str()));
+               cont++;
+             break;
+             case 2:
+                temPtrDinosaurio->setFecha(strTemporal.c_str());
+                cont++;
+             break;
+             case 3:
+                temPtrDinosaurio->setPeso(atoi(strTemporal.c_str()));
+                cont++;
+             break;
+             case 4:
+                temPtrDinosaurio->setLongitud(atoi(strTemporal.c_str()));
+                bodegaTemp->setIngredientres(temPtrDinosaurio);
+                cont=0;
+             break;
+            }
+            strTemporal="";
+         
+         } while(temporalChar!='/');
+         infile.close();
+        
+        //Fin cargar
 }
