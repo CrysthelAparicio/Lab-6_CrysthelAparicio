@@ -25,8 +25,9 @@ void aereos::getVuela(bool vuela){
 void aereos::getPlumas(bool plumas){
   this->plumas = plumas;
 }
-
-void Aereos::toString(){
+/*
+void aereos::toString(){
 cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
   "Longitud: "<< longitud << "Vuela?:  " <<vuela << "Tiene plumas?: "<<plumas;
 }
+*/

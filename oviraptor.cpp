@@ -21,11 +21,12 @@ int oviraptor::getalturaCresta(){
 bool oviraptor::getPlumaje(){
   return plumaje;
 }
-
+/*
 void oviraptor::toString(){
   cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
   "Longitud: "<< longitud<< "Altura de la cresta: "<<alturaCresta << "Tiene plumaje?: "<< plumaje;
 }
+*/
 
 void oviraptor::setAlturaCresta(int alturaCresta){
   this->alturaCresta = alturaCresta;
