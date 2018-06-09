@@ -25,9 +25,4 @@ void Marinos::setnumAletas(int o){
 void Marinos::setTipo(string t){
     Tipo = t;
 }
-/*
-void Marinos::toString(){
-  cout <<"Nombre: " << nombre <<"Altura: "<<altura <<"Peso: "<< peso <<"Fecha: "<< fechaCreacion <<"Sexo: "<<sexo <<
-  "Longitud: "<< longitud <<"Num. de Aletas: "<<numAletas<<"Tipo: "<<Tipo << endl;
-}
-*/
+

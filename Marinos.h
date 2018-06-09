@@ -23,7 +23,6 @@ class Marinos:public Dinosaurio {
     //Setters
     void setnumAletas(int);
     void setTipo(string);
-    virtual void toString();
 
 };
 #endif
