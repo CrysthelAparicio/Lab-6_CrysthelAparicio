@@ -13,11 +13,11 @@ using namespace std;
 #include "triceratops.h"
 #include "Tyranosaurio.h"
 #include <vector>
-
+#include <fstream>
 vector <Dinosaurio*> Vdino;
-Dinosaurio* dino;
+Dinosaurio* dino = new Dinosaurio();
 Cuidador* cuida;
-
+vector<Cuidador*> vCuidadores;
 vector<Dinosaurio> vr;
 
 int main()
@@ -792,14 +792,60 @@ void eliminarDinosaurio(){
     }
 }
 
+void escribirArchivo(){
+    ofstream archivo;
+    archivo.open("cuidadores.txt",ios::trunc);
+
+    for(int i = 0; i < vCuidadores.size(); i++){
+        archivo<<vCuidadores[i]->getNombre()<<";";
+        archivo<<vCuidadores[i]->getID()<<";";
+        //archivo<<v_cuidadores[i]->getedad()<<";";
+        archivo<<vCuidadores[i]->getSexo()<<endl;
+    }
+    archivo.close();
+
+}
+
+void cargarArchivo(){
+    ifstream archivo;
+    string id;
+    string nombre;
+    string sexo;
+    string todo;
+    archivo.open("cuidadores.txt",ios::in);
+    while(!archivo.eof()){
+        getline(archivo,todo);
+        if(todo != ""){
+            int posI =0;
+            int posF=0;
+            vector<string> r;
+            string split;
+            while(posF >=0){
+                posF = todo.find(";",posI);
+                split = todo.substr(posI,posF-posI);
+                posI = posF+1;
+                r.push_back(split);
+            }
+            nombre = r.at(0);
+            id = r.at(1);
+            sexo = r.at(2);
+            Cuidador* cui = new Cuidador(nombre,id,sexo,0);
+            vCuidadores.push_back(cui);
+            }
+    }
+    archivo.close();
+}
+
 void cargarArchivos(){
+    vector <Dinosaurio*> Vdino;
+    Dinosaurio* dino;
     ifstream infile("texto.txt");
          char temporalChar;
          string strTemporal="";
          int cont=0;
          Dinosaurio* temPtrDinosaurio;
          
-        void setNombre(string);
+    void setNombre(string);
     void setAltura(int);
     void setPeso(double);
     void setFecha(string);
@@ -817,7 +863,7 @@ void cargarArchivos(){
         
             switch(cont){
              case 0:
-                temPtrDinosaurio=new Dinosaurio;
+                temPtrDinosaurio;
                 temPtrDinosaurio->setNombre(strTemporal);
                 cont++;
              break;
@@ -835,7 +881,7 @@ void cargarArchivos(){
              break;
              case 4:
                 temPtrDinosaurio->setLongitud(atoi(strTemporal.c_str()));
-                bodegaTemp->setIngredientres(temPtrDinosaurio);
+                //dino->setLongitud(temPtrDinosaurio);
                 cont=0;
              break;
             }
@@ -843,6 +889,59 @@ void cargarArchivos(){
          
          } while(temporalChar!='/');
          infile.close();
-        
         //Fin cargar
+}
+
+void cuidadores(){
+    char tecla;
+    Cuidador* cuidador;
+    cout<<"1. Agregar cuidadores"<<endl;
+    cout<<"2. Eliminar cuidadores"<<endl;
+    cin>>tecla;
+    string nombre,ID,sexo;
+    int edad;
+    int cont=0;
+    switch(tecla){
+        case '1'://agregar
+                cout<<"Ingrese el nombre:"<<endl;
+                cin>>nombre;
+                cout<<"Ingrese su ID:"<<endl;
+                cin>>ID;
+                cout<<"Ingrese el sexo(Fem/Mas):"<<endl;
+                cin>>sexo;
+                cout<<"ingrese edad:"<<endl;
+                cin>>edad;
+                while(edad<21){
+                    cout<<"Mal,La edad tiene que ser mayor de 21 en adelante"<<endl;
+                    cin>>edad;
+                }
+                Cuidador* c=new Cuidador(nombre,3,sexo,edad);
+                vCuidadores.push_back(cuidador);
+               // escribirArchivo();
+                break;
+        case '2'://eliminar
+
+                int opcion;
+                cout<<"Eliga a quien eliminara"<<endl;
+                for(int i=0;i<vCuidadores.size();i++){
+                    cout<<cont<<". "<<vCuidadores[i]->getNombre()<<endl;
+                    cont++;
+                }
+                cin>>opcion;
+                if(opcion<0 || opcion>=vCuidadores.size()){
+                    cout<<"incorrecto,opcion fuera de rango"<<endl;
+                    cin>>opcion;
+                }else{
+                    vCuidadores.erase(begin(vCuidadores)+opcion);
+                }
+                break;
+
+        case '3':
+               
+                break;
+        default:
+            cout<<"opcion incorrecta"<<endl;
+            break;
+    }
+
 }
