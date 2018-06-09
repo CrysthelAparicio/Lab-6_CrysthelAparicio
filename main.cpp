@@ -14,12 +14,14 @@ using namespace std;
 #include "Tyranosaurio.h"
 #include <vector>
 #include <fstream>
+using std::cout;
 vector <Dinosaurio*> Vdino;
-Dinosaurio* dino = new Dinosaurio();
+Dinosaurio* dino;
 Cuidador* cuida;
 vector<Cuidador*> vCuidadores;
 vector<Dinosaurio> vr;
-
+void eliminarDinosaurio();
+void agregarEspecies();
 int main()
 {
 	int opcion;
@@ -41,13 +43,14 @@ int main()
 		switch (opcion)
 		{
 			case 1:
-
+    agregarEspecies();
 				break;
 
 			case 2:
 				break;
 
 			case 3:
+            eliminarDinosaurio();
 				break;
 
 			case 4:
@@ -103,123 +106,115 @@ int validarCin(string mensaje)
 	return resultado;
 }
 
-void agregarEspecies()
-{
-    char resp;
-    cout<<"1.Agregar Carnivoros\n2.Agregar Herbivoros\n3.Agregar Omnivoros\n 4. Agregar Aereos\n 5. Agregar Marinos";
-    cin>>resp;
-        //Variables
-    switch(resp)
-    {
-        case '1':
+void agregarEspecies(){
         char carni;
         string organo; 
         string coc; 
 		string nombre;
 		double altura,peso,longitud;
 		string fecha,sexo;
-		cout<<"Ingrese el nombre del Dinosaurio"<<endl;
-		cin>>nombre;
-		cout<<"Ingrese la Altura"<<endl;
-		cin>>altura;
-		cout<<"Ingrese el peso"<<endl;
-		cin>>peso;
-		cout<<"Ingrese la fecha de Creacion"<<endl;
-		cin>>fecha;
-		cout<<"Ingrese el Sexo"<<endl;
-		cin>>sexo;
-		cout<<"Ingrese la longitud"<<endl;
-		cin>>longitud;
-        cout<<"Ingrese tipo de organo(dientes-garras): "<<endl;
-        cin>>organo;
-        cout<<"Ingrese si es cazador o carroñero: "<<endl;
-        cin>>coc;
-        cout<<"Tipo de Dinosaurio Carnivoro->\n1.Tyranosaurio\n2.Spinosaurio";
-        cin>>carni;
-        break;
-
-        switch(carni){
-            int colmillos=0;
-            int consumo=0;
-            double alturaEspina=0;
-            double longitudBrazo=0;
-
-                        case '1':
-                        cout<<"Numero de Colminllos: "<<endl;
-                        if(colmillos<=60){
-                        cout<<"Ingrese un valor mayor a 60"<<endl;
-                        }else{
-                        cin>>colmillos;
-                        }
-                        cout<<"Consumo diario de carne: "<<endl;
-                        if(consumo<=6877){
-                        cout<<"Ingrese un valor mayor a 6877"<<endl;
-                        }else{
-                        cin>>consumo;
-                        }
-                        dino = new Tyranosaurio(nombre,altura,peso,fecha,sexo,longitud,organo,coc,colmillos,consumo);
-						Vdino.push_back(dino);
-                        break;
-
-                        case '2':
-                        string nombre;
-                        double altura,peso,longitud;
-                        string fecha,sexo;
-                        cout<<"Ingrese el nombre del Dinosaurio"<<endl;
-                        cin>>nombre;
-                        cout<<"Ingrese la Altura"<<endl;
-                        cin>>altura;
-                        cout<<"Ingrese el peso"<<endl;
-                        cin>>peso;
-                        cout<<"Ingrese la fecha de Creacion"<<endl;
-                        cin>>fecha;
-                        cout<<"Ingrese el Sexo"<<endl;
-                        cin>>sexo;
-                        cout<<"Ingrese la longitud"<<endl;
-                        cin>>longitud;
-                        cout<<"Altura de Espina Neural: "<<endl;
-                        if(alturaEspina<=2.5){
-                        cout<<"Ingrese un valor mayor a 2.5"<<endl;
-                        }else{
-                        cin>>alturaEspina;
-                        }
-                        cout<<"Longitud de Brazos: "<<endl;
-                        if(longitudBrazo>=1.5){
-                        cout<<"Ingrese un valor menor a 1.5"<<endl;
-                        }else{
-                        cin>>longitudBrazo;
-                        }
-						dino  = new Spinosauro(nombre,altura,peso,fecha,sexo,longitud,organo,coc,alturaEspina,longitudBrazo);
-						Vdino.push_back(dino);
-                        break;
-                    }
-        case '2':
-        char herbi;
-        int ic;
-        string nombre;
-                        double altura,peso,longitud;
-                        string fecha,sexo;
-        cout<<"Ingrese el nombre del Dinosaurio"<<endl;
-                        cin>>nombre;
-                        cout<<"Ingrese la Altura"<<endl;
-                        cin>>altura;
-                        cout<<"Ingrese el peso"<<endl;
-                        cin>>peso;
-                        cout<<"Ingrese la fecha de Creacion"<<endl;
-                        cin>>fecha;
-                        cout<<"Ingrese el Sexo"<<endl;
-                        cin>>sexo;
-                        cout<<"Ingrese la longitud"<<endl;
-                        cin>>longitud;
-        cout<<"Ingrese si son frugivoros o folivoros: "<<endl;
-        cin>>organo;
-        cout<<"ingrese el numero de insicivos "<<endl;
-        cin>>ic;
-        break;
-
-                int longitud_cuernos=0;
+        
+        int colmillos=0;
+        int consumo=0;
+        double alturaEspina=0;
+        double longitudBrazo=0;
+        char resp;
+        int longitud_cuernos=0;
                 int longitud_cuerno_nasal=0;
-                        case '1':
+                int ic;
+                 int altura_cresta;
+                 int num_molares;
+                 int num_colmillos;
+        cout<<"1.Agregar Carnivoros\n2.Agregar Herbivoros\n3.Agregar Omnivoros\n 4. Agregar Aereos\n 5. Agregar Marinos";
+         cin>>resp;
+        //Variables
+    switch(resp) {
+        case '1':  
+                    cout<<"Ingrese el nombre del Dinosaurio"<<endl;
+                    cin>>nombre;
+                    cout<<"Ingrese la Altura"<<endl;
+                    cin>>altura;
+                    cout<<"Ingrese el peso"<<endl;
+                    cin>>peso;
+                    cout<<"Ingrese la fecha de Creacion"<<endl;
+                    cin>>fecha;
+                    cout<<"Ingrese el Sexo"<<endl;
+                    cin>>sexo;
+                    cout<<"Ingrese la longitud"<<endl;
+                    cin>>longitud;
+                    cout<<"Ingrese tipo de organo(dientes-garras): "<<endl;
+                    cin>>organo;
+                    cout<<"Ingrese si es cazador o carroñero: "<<endl;
+                    cin>>coc;
+                    cout<<"Tipo de Dinosaurio Carnivoro->\n1.Tyranosaurio\n2.Spinosaurio";
+                    cin>>carni;
+                    break;
+                     switch(carni){
+                                case '1':
+                                cout<<"Numero de Colminllos: "<<endl;
+                                if(colmillos<=60){
+                                cout<<"Ingrese un valor mayor a 60"<<endl;
+                                }else{
+                                cin>>colmillos;
+                                }
+                                cout<<"Consumo diario de carne: "<<endl;
+                                if(consumo<=6877){
+                                cout<<"Ingrese un valor mayor a 6877"<<endl;
+                                }else{
+                                cin>>consumo;
+                                }
+                                dino = new Tyranosaurio(nombre,altura,peso,fecha,sexo,longitud,organo,coc,colmillos,consumo);
+                                Vdino.push_back(dino);
+                                break;
+
+                                case '2':
+                                ////double altura,peso,longitud;
+                                //string fecha,sexo;
+                                cout<<"Ingrese el nombre del Dinosaurio"<<endl;
+                                cin>>nombre;
+                                cout<<"Ingrese la Altura"<<endl;
+                                cin>>altura;
+                                cout<<"Ingrese el peso"<<endl;
+                                cin>>peso;
+                                cout<<"Ingrese la fecha de Creacion"<<endl;
+                                cin>>fecha;
+                                cout<<"Ingrese el Sexo"<<endl;
+                                cin>>sexo;
+                                cout<<"Ingrese la longitud"<<endl;
+                                cin>>longitud;
+                                cout<<"Altura de Espina Neural: "<<endl;
+                                if(alturaEspina<=2.5){
+                                cout<<"Ingrese un valor mayor a 2.5"<<endl;
+                                }else{
+                                cin>>alturaEspina;
+                                }
+                                cout<<"Longitud de Brazos: "<<endl;
+                                if(longitudBrazo>=1.5){
+                                cout<<"Ingrese un valor menor a 1.5"<<endl;
+                                }else{
+                                cin>>longitudBrazo;
+                                }
+                                dino  = new Spinosauro(nombre,altura,peso,fecha,sexo,longitud,organo,coc,alturaEspina,longitudBrazo);
+                                Vdino.push_back(dino);
+                                break;
+                    }
+        case '2': 
+             cout<<"Ingrese el nombre del Dinosaurio"<<endl;
+                        cin>>nombre;
+                        cout<<"Ingrese la Altura"<<endl;
+                        cin>>altura;
+                        cout<<"Ingrese el peso"<<endl;
+                        cin>>peso;
+                        cout<<"Ingrese la fecha de Creacion"<<endl;
+                        cin>>fecha;
+                        cout<<"Ingrese el Sexo"<<endl;
+                        cin>>sexo;
+                        cout<<"Ingrese la longitud"<<endl;
+                        cin>>longitud;
+                        cout<<"Ingrese si son frugivoros o folivoros: "<<endl;
+                        cin>>organo;
+                        cout<<"ingrese el numero de insicivos "<<endl;
+                        cin>>ic;
                         cout<<"Ingrese la longitud de cuernos "<<endl;
 
                         cin>>longitud_cuernos;
@@ -233,11 +228,8 @@ void agregarEspecies()
         break;
 
 		case '3':
-            string nombre,fecha,sexo;
-            int altura,peso,longitud;
-            int num_molares,num_colmillos;
-            nt altura_cresta;
             char op;
+            //int cont=0;
             bool plumaje;
 			cout<<"ingrese nombre:"<<endl;
             cin>>nombre;
@@ -262,23 +254,7 @@ void agregarEspecies()
             while(longitud<2){
                 cout<<"incorrecto,vuelva a ingresar longitud"<<endl;
                 cin>>longitud;
-            }
-            cout<<"Escoja cuidador:"<<endl;
-
-            int opcion;
-                for(int i=0;i<v_cuidadores.size();i++){
-                    cout<<cont<<". "<<v_cuidadores[i]->getnombre()<<endl;
-                    cont++;
-                }
-                cin>>opcion;
-                if(opcion<0 || opcion>=v_cuidadores.size()){
-                    cout<<"incorrecto,opcion fuera de rango"<<endl;
-                    cin>>opcion;
-                }else{
-                    c=v_cuidadores[opcion];
-                }
-
-        
+            }  
         cout<<"numeros de molares: "<<endl;
         cin>>num_molares;
         while(num_molares<0|| num_molares>30){
@@ -313,8 +289,6 @@ void agregarEspecies()
     break;
 
     case '4':
-         string nombre,fecha,sexo;
-    int altura,peso,longitud;
     //datos clase
     bool vuela,plumas;
     char op1,op2;
@@ -363,8 +337,6 @@ void agregarEspecies()
         Vdino.push_back(dino);
         
         break;
-
-
         case '5':
 
         string nombre,fecha,sexo;
@@ -401,18 +373,6 @@ void agregarEspecies()
             }
             cout<<"Escoja cuidador:"<<endl;
 
-            int opcion;
-                for(int i=0;i<v_cuidadores.size();i++){
-                    cout<<cont<<". "<<v_cuidadores[i]->getnombre()<<endl;
-                    cont++;
-                }
-                cin>>opcion;
-                if(opcion<0 || opcion>=v_cuidadores.size()){
-                    cout<<"incorrecto,opcion fuera de rango"<<endl;
-                    cin>>opcion;
-                }else{
-                    c=v_cuidadores[opcion];
-                }
 
         //datos clase
         cout<<"numero de aletas"<<endl;
@@ -427,566 +387,10 @@ void agregarEspecies()
         // string sexo, int longitud,int numAletas,string tipo
         dino=new Marinos(nombre,altura,peso,fecha,sexo,longitud,num_aletas,tipo);
          Vdino.push_back(dino);
-          for(int i=0;v_cuidadores.size();i++){
-                    if(v_cuidadores[i]==c){
-                         c->setdinosaurio(dino);
-                    }
-                }
-
-
         break;
         
     }
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 void eliminarDinosaurio(){
@@ -1003,10 +407,10 @@ void eliminarDinosaurio(){
         cout<<"Incorrecto, opcion fuera de rango"<<endl;
         cin>>opcion;
     }else{
-        Vdino.erase(begin(Vdino)+opcion);
+        //Vdino.erase(begin(Vdino)+opcion);
     }
 }
-
+/*
 void escribirArchivo(){
     ofstream archivo;
     archivo.open("cuidadores.txt",ios::trunc);
@@ -1044,7 +448,7 @@ void cargarArchivo(){
             nombre = r.at(0);
             id = r.at(1);
             sexo = r.at(2);
-            Cuidador* cui = new Cuidador(nombre,id,sexo,0);
+            Cuidador* cui = new Cuidador(nombre,3,sexo,0);
             vCuidadores.push_back(cui);
             }
     }
@@ -1160,3 +564,4 @@ void cuidadores(){
     }
 
 }
+*/
