@@ -14,7 +14,6 @@ using namespace std;
 #include "Tyranosaurio.h"
 #include <vector>
 #include <fstream>
-#include <fstream>
 #include <cstdlib>
 using std::cout;
 vector <Dinosaurio*> Vdino;
@@ -517,6 +516,7 @@ void cuidadores(){
 vector <Dinosaurio*> Vdino;
 Dinosaurio* dino;
 Cuidador* cuida;
+int opcion;
 vector<Cuidador*> vCuidadores;
     char tecla;
     Cuidador* cuidador;
@@ -545,7 +545,6 @@ vector<Cuidador*> vCuidadores;
                // escribirArchivo();
                 break;
         case '2':
-                int opcion;
                 cout<<"Eliga a quien eliminara"<<endl;
                 for(int i=0;i<vCuidadores.size();i++){
                     cout<<cont<<". "<<vCuidadores[i]->getNombre()<<endl;
