@@ -14,19 +14,22 @@ using namespace std;
 #include "Tyranosaurio.h"
 #include <vector>
 #include <fstream>
+#include <fstream>
 #include <cstdlib>
 using std::cout;
 vector <Dinosaurio*> Vdino;
 Dinosaurio* dino;
 Cuidador* cuida;
+Cuidador* cuida2;
 vector<Cuidador*> vCuidadores;
 vector<Dinosaurio> vr;
 int opcion=0;
-//void eliminarDinosaurio();
+void eliminarDinosaurio();
 void agregarEspecies();
 int main()
 {
-	int opcion;
+	int opcion=-1;
+    int* arr = NULL;
 	//Dinosaurio* dino = NULL;
 	do
 	{
@@ -37,7 +40,6 @@ int main()
 			<< "4) Visualizar Reporte Especie\n"
 			<< "5) Visualizar Reporte Dinosaurio\n"
 			<< "6) Agregar Cuidarores\n"
-			<< "7) Eliminar Cuidador\n"
 			<< "0) Salir\n"
 			<< "Seleccione una opcion: ";
 		cin >> opcion;
@@ -52,7 +54,7 @@ int main()
 				break;
 
 			case 3:
-            //eliminarDinosaurio();
+            eliminarDinosaurio();
 				break;
 
 			case 4:
@@ -67,12 +69,13 @@ int main()
 				
 				break;
 
-			case 7:
-				
-				break;
-
 			case 0:
-				
+				  if (arr != NULL)
+                                {
+                                        delete[] arr;
+                                        arr = NULL;
+                                }
+                                cout << "Saliendo..." << endl;
 				break;
 
 			default:
@@ -409,7 +412,8 @@ void eliminarDinosaurio(){
         cout<<"Incorrecto, opcion fuera de rango"<<endl;
         cin>>opcion;
     }else{
-        Vdino.erase(begin(Vdino)+opcion);
+        //Vdino.erase(begin(Vdino.pop_back())+opcion);
+        delete Vdino[opcion];
     }
 }
 
@@ -516,7 +520,6 @@ void cuidadores(){
 vector <Dinosaurio*> Vdino;
 Dinosaurio* dino;
 Cuidador* cuida;
-int opcion;
 vector<Cuidador*> vCuidadores;
     char tecla;
     Cuidador* cuidador;
@@ -540,11 +543,12 @@ vector<Cuidador*> vCuidadores;
                     cout<<"Mal,La edad tiene que ser mayor de 21 en adelante"<<endl;
                     cin>>edad;
                 }
-                Cuidador* cuida=new Cuidador(nombre,3,sexo,edad);
-                vCuidadores.push_back(cuidador);
-               // escribirArchivo();
+                 cuida2=new Cuidador(nombre,3,sexo,edad);
+                vCuidadores.push_back(cuida2);
+               escribirArchivo();
                 break;
         case '2':
+                int opcion;
                 cout<<"Eliga a quien eliminara"<<endl;
                 for(int i=0;i<vCuidadores.size();i++){
                     cout<<cont<<". "<<vCuidadores[i]->getNombre()<<endl;
@@ -555,7 +559,7 @@ vector<Cuidador*> vCuidadores;
                     cout<<"incorrecto,opcion fuera de rango"<<endl;
                     cin>>opcion;
                 }else{
-                    vCuidadores.erase(begin(vCuidadores)+opcion);
+                    delete vCuidadores[opcion];
                 }
                 break;
             cout<<"opcion incorrecta"<<endl;
